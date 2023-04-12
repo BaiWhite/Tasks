@@ -17,10 +17,10 @@ function generateTable(id) {
       childElement.classList.remove("unClick");
       childElement.classList.remove("clicked");
       childElement.classList.add("unClick");
-      childElement.classList.add("list");
+      childElement.classList.add("inner");
     }
 
-    category.setAttribute("class", "clicked list")
+    category.setAttribute("class", "clicked inner")
     let list = [];
     switch (id) {
         case 'vegetables':
@@ -50,7 +50,7 @@ function generateTable(id) {
         child.innerHTML = '' + item;
         child.setAttribute("onclick", "changeColor(" + index + ")");
         child.setAttribute("id", String(index));
-        child.setAttribute("class", "unClick list");
+        child.setAttribute("class", "unClick");
         table.appendChild(child);
     });
     let parent = productList.parentNode;
@@ -61,8 +61,8 @@ function changeColor(num) {
     className = document.getElementById(String(num));
 
     if (className.className == "clicked") {
-        className.className = "unClick list";
+        className.className = "unClick";
     } else {
-        className.className = "clicked list";
+        className.className = "clicked";
     }
 }
