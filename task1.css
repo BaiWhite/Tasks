@@ -1,0 +1,22 @@
+.clicked {
+    background-color: green;
+}
+.unClick {
+    background-color: gray;
+}
+.title {
+    background-color: cornflowerblue;
+    padding: 30px;
+    height: 60px;
+}
+.category {
+    padding: 10px;
+    background-color: ghostwhite;
+}
+.list {
+    padding: 5px;
+    margin: 5px;
+}
+.box {
+    width: 500px;
+}
