@@ -1,14 +1,45 @@
-document.getElementById("vegetables").addEventListener("click", function() {
-    generateTable('vegetables')});
-document.getElementById("spices").addEventListener("click", function() {
-    generateTable('spices')});
-document.getElementById("fruits").addEventListener("click", function() {
-    generateTable('fruits')});
+function loadFunction() {
+    let table = document.createElement("div");
+    table.className = "box"
+    
+    let title = document.createElement("h1");
+    title.className = "title";
+    title.innerHTML = "Inventory";
+    table.appendChild(title);
+
+    let category = document.createElement("div");
+    category.className = "category outer";
+    let list = ["vegetables", "spices", "fruits"];
+    list.forEach((item, index) =>{
+        const child = document.createElement("div");
+        child.id = item;
+        child.className = "unClick inner";
+        child.onclick = function(){generateTable(item)}; ;
+        child.innerHTML = "(" + String(index) + ") " + item.charAt(0).toUpperCase() + item.slice(1);
+        category.appendChild(child);
+    })
+    table.appendChild(category);
+
+    let listAmount = document.createElement("div");
+    let heading = document.createElement("p");
+    heading.id = "listAmount";
+    let productList = document.createElement("div");
+    productList.id = "productList";
+    productList.className = "category";
+    listAmount.appendChild(heading);
+    listAmount.appendChild(productList);
+    table.appendChild(listAmount);
+
+    const main = document.getElementById("main");
+    main.innerHTML = "";
+    main.appendChild(table);
+}
+window.onload = loadFunction;
 
 const vegetables = ['Carrot', 'Cucumber']
 const spices = ['Salt', 'Pepper', 'Chilli', 'Herbs', 'Curry']
 const fruits = ['Apple', 'Banana', 'Pear', 'Watermelon', 'Grape', 'Strawberry', 'Mango', 'Blackberry']
-
+    
 function generateTable(id) {
     const category = document.getElementById(String(id));
     const categoryList = category.parentNode.children;
