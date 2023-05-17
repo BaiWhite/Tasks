@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>index page</title>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            background-image: linear-gradient(to buttom right, red, gold);
+        }
+
+        .box{
+            width: 400px;
+            height: 250px;
+            background-color: rgba(255, 255, 255, 0.6);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div id="HH">00</div>
+        <div>:</div>
+        <div id="mm">00</div>
+        <div>:</div>
+        <div id="ss">00</div>
+    </div>
+    
+    <script>
+        window.onload = function () {
+            var dt = new Date()
+            var HH = dt.getHours()
+            var mm = dt.getMinutes()
+            var ss = dt.getSeconds()        
+        }
+    </script>
+    
+</body>
+</html>
